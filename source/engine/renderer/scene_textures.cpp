@@ -51,7 +51,11 @@ namespace engine
 			depthTextureFormat(), 
 			kDepthVkImageUsage);
 
-		result.gbufferA  = pool.createPoolImage("GBufferA", renderWidth, renderHeight, gbufferAFormat(), kGBufferVkImageUsage);
+		result.gbufferA  = pool.createPoolImage("GBufferA", renderWidth, renderHeight, gbufferAFormat(), 
+			VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT |
+			VK_IMAGE_USAGE_SAMPLED_BIT |
+			VK_IMAGE_USAGE_TRANSFER_SRC_BIT |
+			VK_IMAGE_USAGE_TRANSFER_DST_BIT);
 		result.gbufferB  = pool.createPoolImage("GBufferB", renderWidth, renderHeight, gbufferBFormat(), kGBufferVkImageUsage);
 		result.gbufferS  = pool.createPoolImage("GBufferS", renderWidth, renderHeight, gbufferSFormat(), kGBufferVkImageUsage);
 		result.gbufferV  = pool.createPoolImage("GBufferV", renderWidth, renderHeight, gbufferVFormat(), kGBufferVkImageUsage);

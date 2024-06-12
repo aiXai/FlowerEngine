@@ -776,7 +776,7 @@ namespace engine
 			// Just load from cache file.
 			loadAsset(snapshotData, cacheAsset->getSnapshotPath());
 		}
-		memcpy(bufferPtrStart, snapshotData.data(), uploadSize());
+		memcpy(bufferPtrStart, snapshotData.data(), snapshotData.size());
 
 		imageAssetGPU->prepareToUpload(commandBuffer, buildBasicImageSubresource());
 

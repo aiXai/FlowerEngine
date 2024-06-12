@@ -92,7 +92,7 @@ namespace engine
 		static auto depthTextureFormat() { return VK_FORMAT_D32_SFLOAT; }
 
 		PoolImageSharedRef gbufferA = nullptr; // GBuffer A: r8g8b8a8 unorm, .rgb store base color.
-		inline static auto gbufferAFormat() { return VK_FORMAT_R8G8B8A8_UNORM; }
+		inline static auto gbufferAFormat() { return VK_FORMAT_B8G8R8A8_SRGB; }
 
 		PoolImageSharedRef gbufferB = nullptr; // GBuffer B : r10g10b10a2 .rgb store worldspace normal pack.
 		inline static auto gbufferBFormat() { return VK_FORMAT_A2B10G10R10_UNORM_PACK32; }
