@@ -65,7 +65,7 @@ namespace engine
         deviceExtensionNames.push_back(VK_KHR_16BIT_STORAGE_EXTENSION_NAME);
         deviceExtensionNames.push_back(VK_KHR_8BIT_STORAGE_EXTENSION_NAME);
         deviceExtensionNames.push_back(VK_KHR_PUSH_DESCRIPTOR_EXTENSION_NAME);
-//      deviceExtensionNames.push_back(VK_EXT_EXTENDED_DYNAMIC_STATE_3_EXTENSION_NAME);
+        deviceExtensionNames.push_back(VK_EXT_EXTENDED_DYNAMIC_STATE_3_EXTENSION_NAME);
 
         // Add swapchain extension for windows application.
         if (m_engine->isWindowApplication())
@@ -132,6 +132,7 @@ namespace engine
         enable10GpuFeatures.shaderInt16 = VK_TRUE;
         enable10GpuFeatures.fillModeNonSolid = VK_TRUE;
         enable10GpuFeatures.depthBiasClamp = VK_TRUE;
+        enable10GpuFeatures.vertexPipelineStoresAndAtomics = VK_TRUE;
 
         // Enable gpu features 1.1 here.
         enable11GpuFeatures.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES;
@@ -158,7 +159,7 @@ namespace engine
         enable12GpuFeatures.bufferDeviceAddress = VK_TRUE;
         enable12GpuFeatures.shaderFloat16 = VK_TRUE;
         enable12GpuFeatures.hostQueryReset = VK_TRUE;
-
+        
         // Enable gpu features 1.3 here.
         enable13GpuFeatures.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES;
         enable13GpuFeatures.dynamicRendering = VK_TRUE;
