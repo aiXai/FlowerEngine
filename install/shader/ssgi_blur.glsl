@@ -132,9 +132,9 @@ void main()
     const float phiLuma = phiColor * sqrt(max(0.0, 1e-10 + var));
 
     const float kWeights[3] = { 1.0, 2.0 / 3.0, 1.0 / 6.0 };
-    for(int y = -2; y < 2; y ++)
+    for(int y = -1; y < 2; y ++)
     {
-        for(int x = -2; x < 2; x ++)
+        for(int x = -1; x < 2; x ++)
         {
             const ivec2 samplePos  = workPos + ivec2(x, y) * kStepSize;
             const vec2  sampleUv = (samplePos + vec2(0.5)) * texelSize;
